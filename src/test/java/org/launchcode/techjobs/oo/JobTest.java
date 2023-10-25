@@ -20,21 +20,26 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-//        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//        assertTrue(test_job.getName().instanceof(test_job.name));
-//        assertTrue(test_job.getEmployer().instanceof(Employer));
-//        assertTrue(test_job.getLocation().instanceof(Location));
-//        assertTrue(test_job.getPositionType().instanceof(PositionType));
-//        assertTrue(test_job.getCoreCompetency().instanceof(CoreCompetency));
-//        assertEquals(test_job.getName().equals(test_job.name));
-//        assertEquals(test_job.getEmployer().getValue().equals(test_job.getEmployer()));
-//        assertEquals(test_job.getLocation().getValue().equals(test_job.location));
-//        assertEquals(test_job.getPositionType().getValue().equals(test_job.positionType));
-//        assertEquals(test_job.getCoreCompetency().getValue().equals(test_job.coreCompetency));
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertTrue(test_job.getName() instanceof String);
+        assertTrue(test_job.getEmployer() instanceof Employer);
+        assertTrue(test_job.getLocation() instanceof Location);
+        assertTrue(test_job.getPositionType() instanceof PositionType);
+        assertTrue(test_job.getCoreCompetency() instanceof CoreCompetency);
+        assertEquals(test_job.getName(), "Product tester");
+        assertEquals(test_job.getEmployer().toString(), test_job.getEmployer().getValue());
+        assertEquals(test_job.getLocation().toString(), test_job.getLocation().getValue());
+        assertEquals(test_job.getPositionType().toString(), test_job.getPositionType().getValue());
+        assertEquals(test_job.getCoreCompetency().toString(), test_job.getCoreCompetency().getValue());
     }
 
     @Test
     public void testJobsForEquality() {
-
+//        Job equality_test = new Job("Jiminy Cricket", new Employer("Blue Fairy"), new Location("Undefined"),
+//                new PositionType("Conscience"), new CoreCompetency("Journalism"));
+//        Job equality_test_2 = new Job("Jiminy Cricket", new Employer("Blue Fairy"), new Location("Undefined"),
+//                new PositionType("Conscience"), new CoreCompetency("Journalism"));
+//        assertEquals(equality_test, equality_test_2);
     }
 }
