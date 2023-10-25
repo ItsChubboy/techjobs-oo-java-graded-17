@@ -15,7 +15,7 @@ public class JobTest {
     public void testSettingJobId() {
         Job test_job = new Job();
         Job second_test_job = new Job();
-        assertNotEquals(test_job, second_test_job);
+        assertNotEquals(test_job.getId(), second_test_job.getId());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class JobTest {
         Job test_job = new Job("Spy", new Employer("MI6"), new Location("London"),
                 new PositionType("00 Agent"), new CoreCompetency("Gadget Proficiency"));
         String newline = System.lineSeparator();
-        assertEquals(test_job.toString(), newline + "ID:  " + test_job.getId() +
+        assertEquals(test_job.toString(), newline + "ID: " + test_job.getId() +
                 "\nName: " + test_job.getName() +
                 "\nEmployer: " + test_job.getEmployer() +
                 "\nLocation: " + test_job.getLocation() +
@@ -71,7 +71,6 @@ public class JobTest {
         Job test_job = new Job("Spy", new Employer(""), new Location("London"),
                 new PositionType(""), new CoreCompetency("Gadget Proficiency"));
         test_job.toString();
-        System.out.println(test_job.toString());
         assertTrue(test_job.getEmployer().getValue() == "Data not available");
         assertTrue(test_job.getPositionType().getValue() == "Data not available");
     }
