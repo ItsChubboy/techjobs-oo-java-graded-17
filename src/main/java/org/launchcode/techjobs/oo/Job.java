@@ -95,4 +95,32 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    public String toString() {
+        String newline = System.lineSeparator();
+
+        if (this.name.equals("")) {
+            setName("Data not available");
+        }
+        if (this.employer.getValue().equals("")) {
+            setEmployer(new Employer("Data not available"));
+        }
+        if (this.location.getValue().equals("")) {
+            setLocation(new Location("Data not available"));
+        }
+        if (this.positionType.getValue().equals("")) {
+            setPositionType(new PositionType("Data not available"));
+        }
+        if (this.coreCompetency.getValue().equals("")) {
+            setCoreCompetency(new CoreCompetency("Data not available"));
+        }
+
+        return newline + "ID: " + this.getId() +
+                  "\nName: " + this.name +
+                  "\nEmployer: " + this.employer +
+                  "\nLocation: " + this.location +
+                  "\nPosition Type: " + this.positionType +
+                  "\nCore Competency: " + this.coreCompetency + newline;
+
+    }
 }
